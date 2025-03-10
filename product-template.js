@@ -6,7 +6,7 @@ function navigateToStore() {
     const body = document.body;
     body.classList.add('animate-out-left'); // Changed to left animation
     setTimeout(() => {
-        window.location.href = 'Store.html';
+        window.location.href = 'store.html';
     }, 300);
 }
 
