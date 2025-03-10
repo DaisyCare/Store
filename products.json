@@ -1,0 +1,37 @@
+{
+    "products": [
+      {
+        "id": "missha-damaged-hair-therapy-treatment",
+        "name": "Missha Damaged Hair Therapy Treatment",
+        "image": "IG-Products/Missha damaged hair therapy treatment.webp",
+        "description": "يساعد البلسم على تغذية وترطيب الشعر، ويساعد على حل مشكلة الأطراف المتقصفة، ويعيد اللمعان للشعر الباهت، والنعومة للشعر الخشن، والمرونة والنعومة للشعر الهش.",
+        "instructions": "تعليمات الاستخدام : بعد غسل الشعر بالشامبو، ضعي البلسم على الشعر ، ودلكي بلطف لمدة 3-5 دقائق، ثم اشطفيه بالماء الدافئ.",
+        "size": "200 مل",
+        "price": 800,
+        "origin": "كوريا",
+        "filename": "Missha-damaged-hair-therapy-treatment.html"
+      },
+      {
+        "id": "rivance-rosemary-oil",
+        "name": "Rivance Rosemary Oil",
+        "image": "IG-Products/Rivance Rosemary Oil.jpg",
+        "description": "فوائد زيت الروزماري : منع تلف الشغر ، التخلص من القشرة ، تحفيز نمو الشعر ، الحد من تساقط الشعر .",
+        "instructions": "تعليمات الاستخدام: استخدم بضع قطرات وقم بالتدليك اللطيف على فروة الرأس مرتين أسبوعياً للحصول على أفضل النتائج.",
+        "size": "30 مل",
+        "price": 450,
+        "origin": "تركيا",
+        "filename": "Rivance-Rosemary-Oil.html"
+      },
+      {
+        "id": "pre-wash-hair-mask",
+        "name": "Pre-wash Hair Mask",
+        "image": "IG-Products/Pre-wash-hair-mask.jpg",
+        "description": "ماسك لترطيب الشعر يحتوي علي زبده الشيا ، زيت الزيتون ، زيت جوز الهند ، ڤايتنين E ، بروڤايتمن B5",
+        "instructions": "طريقة الاستخدام : يوضع علي شعر مبلل لمدة ٣٠ دقيقة ثم يرم شطفه بالشامبو",
+        "size": "٢٠٠ مللي",
+        "price": 500,
+        "origin": "تركيا",
+        "filename": "Pre-wash-Hair-Mask.html"
+    }
+    ]
+  }

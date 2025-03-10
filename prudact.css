@@ -1,0 +1,729 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1E1E1E;
+    font-family: 'Inter', sans-serif;
+    color: #E5E3E3;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes up the full viewport height */
+    overflow-x: hidden; /* Prevent horizontal scrolling during animation */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Move the page to the right */
+.animate-out-right {
+    transform: translateX(100%);
+}
+
+/* Main Content */
+.content {
+    flex: 1; /* Pushes the footer to the bottom */
+    position: relative;
+    padding-bottom: 200px; /* Add padding to prevent content from being hidden behind the footer */
+}
+
+/* Navigation Bar Styles */
+.nav-bar {
+    position: sticky; /* or fixed */
+    top: 0;
+    z-index: 1002; /* Ensure it's above other content */
+    width: 100%;
+    /* other existing styles */
+}
+
+.nav-bar button {
+    font-family: 'Inter', sans-serif;
+    font-size: 25px;
+    color: #D1D1D1;
+    padding: 0 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #222222;
+}
+
+/* Home Button */
+.home-button {
+    position: absolute;
+    top: 31px;
+    left: 57px;
+}
+
+/* About Us Button */
+.about-us-button {
+    position: absolute;
+    top: 29px;
+    right: 250px;
+}
+
+/* Contact Us Button */
+.contact-us-button {
+    position: absolute;
+    top: 29px;
+    right: 50px;
+}
+
+/* Cart Icon Container */
+.cart-icon {
+    position: relative; /* Make it a positioning context for the badge */
+    display: inline-block;
+    cursor: pointer;
+    margin: 10px;
+}
+
+/* Shopping Cart Icon (SVG) */
+.cart-icon img {
+    width: 35px;
+    height: 35px;
+    
+}
+
+/* Badge for Item Count */
+.cart-icon .badge {
+    position: absolute;
+    top: -8px; /* Adjust to align with the top-right corner */
+    right: 50px; /* Adjust to align with the top-right corner */
+    background-color: red;
+    color: #D1D1D1;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    text-align: center;
+    z-index: 1; /* Ensure it appears above the cart icon */
+}
+
+/* Dropdown/Modal for Cart Contents */
+.cart-dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position it directly below the cart icon */
+    left: 0; /* Align it with the right edge of the cart icon */
+    transform: none; /* No horizontal translation */
+    background-color: #222222;
+    border: 1px solid #D1D1D1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Width of the dropdown */
+    z-index: 1000;
+    padding: 10px;
+    margin-top: 5px; /* Add a small gap between the cart icon and dropdown */
+}
+
+.cart-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-dropdown li {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-dropdown li:last-child {
+    border-bottom: none;
+}
+
+.cart-dropdown .total {
+    padding: 10px;
+    text-align: right;
+    font-weight: bold;
+    border-top: 1px solid #444;
+    margin-top: 10px;
+}
+
+/* Styled Remove Button */
+.cart-dropdown .remove-btn {
+    background-color: #dd3333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s ease;
+}
+
+/* Show dropdown on hover */
+.cart-icon:hover .cart-dropdown,
+.cart-dropdown:hover {
+    display: block;
+}
+
+/* Close Button (X) */
+.close-button {
+    position: absolute;
+    top: 120px; /* Y = 120px */
+    right: 45px; /* X = 45px */
+    width: 29px; /* W = 29px */
+    height: 48px; /* H = 48px */
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 40px; /* Font size */
+    color: #FFFFFF; /* Text color */
+    text-align: center;
+    line-height: 48px; /* Center text vertically */
+    cursor: pointer;
+    background-color: transparent; /* No background */
+    border: none; /* No border */
+    z-index: 1000; /* Ensure the button is above other elements */
+}
+
+/* Product Frame */
+.product-frame {
+    position: absolute;
+    top: 233px; /* Adjusted for header height (141 + 92) */
+    left: 90px;
+    width: 484px;
+    height: 743px;
+    border-radius: 20px;
+    background-color: #292929;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.product-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text Sections */
+.text-section {
+    position: absolute;
+    right: 90px;
+    width: 737px;
+    line-height: 1.6;
+}
+
+.text-section p {
+    margin: 0;
+}
+
+/* First Text */
+.text1 {
+    top: 233px; /* Adjusted for header height (141 + 92) */
+    height: 116px;
+    font-size: 21px;
+}
+
+/* Second Text */
+.text2 {
+    top: 430px; /* 233 + 116 + 81 */
+    height: 116px;
+    font-size: 21px;
+}
+
+/* Third Text */
+.text3 {
+    top: 627px; /* 430 + 116 + 81 */
+    height: auto;
+    font-size: 21px;
+}
+
+/* Fourth Text */
+.text4 {
+    top: 708px; /* 627 + 81 */
+    height: auto;
+    font-size: 21px;
+}
+
+/* Fifth Text */
+.text5 {
+    top: 789px; /* 708 + 81 */
+    height: auto;
+    font-size: 21px;
+}
+
+/* Base button styles */
+.add-to-cart,
+.cart-quantity {
+    position: absolute;
+    top: 920px;
+    right: 90px;
+    background-color: #F7C414; /* Yellow */
+    color: #E1E1E1;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Space between elements */
+    min-width: 150px;
+}
+
+/* Hover effect */
+.add-to-cart:hover,
+.cart-quantity:hover {
+    background-color: #FFD700; /* Lighter yellow */
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Quantity Selector (- quantity +) inside button */
+.cart-quantity {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: auto;
+    padding: 15px 30px;
+}
+
+/* Buttons inside quantity selector */
+.cart-quantity button {
+    background-color: transparent;
+    color: #E1E1E1;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cart-quantity button:hover {
+    color: black;
+    transform: scale(1.1);
+}
+
+/* Quantity Number */
+.cart-quantity span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #E1E1E1;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .add-to-cart,
+    .cart-quantity {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+    .cart-quantity {
+        padding: 12px 20px;
+    }
+}
+
+/* Footer Styles */
+.footer {
+    position: absolute; /* Absolute positioning */
+    top: 1200px; /* Position at Y = 450px */
+    left: 0;
+    width: 100%;
+    background-color: #1E1E1E;
+    color: white;
+    padding: 40px 99px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 200px;
+}
+
+.footer-column {
+    flex: 1; /* Makes all sections equal width */
+}
+
+.footer-column:nth-child(2) {
+    padding-left: 50px;
+    margin-left: 50px;
+}
+
+.footer h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #E0E0E0; /* Slightly lighter text */
+}
+
+.footer p,
+.footer ul {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #A0C4FF; /* Light blue color */
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Animation for page transition */
+@keyframes pushLeft {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.animate-out {
+    animation: pushLeft 0.3s ease-out forwards;
+}
+
+/* Tablet Devices (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    /* Navigation adjustments */
+    .nav-bar {
+        height: 70px;
+    }
+
+    .home-button {
+        left: 20px;
+        top: 22px;
+        font-size: 20px;
+    }
+
+    .about-us-button {
+        right: 180px;
+        top: 22px;
+        font-size: 20px;
+    }
+
+    .contact-us-button {
+        right: 20px;
+        top: 22px;
+        font-size: 20px;
+    }
+
+    .cart-icon {
+        right: 330px;
+        top: 17px;
+    }
+
+    .close-button {
+        top: 90px;
+        right: 20px;
+        font-size: 32px;
+    }
+
+    /* Content layout adjustments */
+    .product-frame {
+        top: 150px;
+        left: 50px;
+        width: 350px;
+        height: 550px;
+    }
+
+    .text-section {
+        right: 50px;
+        width: 480px;
+    }
+
+    .text1 {
+        top: 150px;
+        font-size: 18px;
+    }
+
+    .text2 {
+        top: 320px;
+        font-size: 18px;
+    }
+
+    .text3 {
+        top: 490px;
+        font-size: 18px;
+    }
+
+    .text4 {
+        top: 550px;
+        font-size: 18px;
+    }
+
+    .text5 {
+        top: 610px;
+        font-size: 18px;
+    }
+
+    .add-to-cart,
+    .cart-quantity {
+        top: 700px;
+        right: 50px;
+    }
+
+    /* Footer adjustment */
+    .footer {
+        top: 900px;
+        padding: 30px 50px;
+    }
+}
+
+/* Mobile Devices (up to 767px) */
+@media screen and (max-width: 767px) {
+    /* Navigation layout becomes vertical for small screens */
+    .nav-bar {
+        height: auto;
+        flex-direction: column;
+        padding: 10px 0;
+    }
+    .cart-dropdown {
+        right: 0; /* Keep it aligned to the right */
+        width: 250px; /* Reduce width for mobile */
+    }
+
+    .home-button,
+    .about-us-button,
+    .contact-us-button {
+        position: relative;
+        top: unset;
+        left: unset;
+        right: unset;
+        margin: 5px auto;
+        font-size: 18px;
+    }
+
+    .cart-icon {
+        position: absolute;
+        top: 10px;
+        left: 20px; /* Moved to the left */
+    }
+
+    .hamburger-menu {
+        position: absolute;
+        top: 10px;
+        right: 20px; /* Positioned on the right */
+    }
+
+    .close-button {
+        top: 70px;
+        right: 15px;
+        font-size: 28px;
+    }
+
+    /* Stack content vertically */
+    .product-frame {
+        position: relative;
+        top: 20px;
+        left: 0;
+        width: 90%;
+        height: 500px;
+        margin: 0 auto;
+    }
+
+    .text-section {
+        position: relative;
+        right: 0;
+        width: 90%;
+        margin: 15px auto;
+        text-align: right;
+    }
+
+    .text1,
+    .text2,
+    .text3,
+    .text4,
+    .text5 {
+        position: relative;
+        top: unset;
+        font-size: 16px;
+        margin-top: 60px;
+    }
+
+    .add-to-cart,
+    .cart-quantity {
+        position: relative;
+        top: unset;
+        right: unset;
+        margin: 20px auto;
+        width: 80%;
+    }
+
+    /* Footer becomes stacked */
+    .footer {
+        position: relative;
+        top: 50px;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .footer-column {
+        margin: 15px 0;
+        padding-left: 0;
+    }
+
+    .footer-column:nth-child(2) {
+        margin-left: 0;
+        padding-left: 0;
+    }
+}
+
+/* Small Mobile Devices (up to 480px) */
+@media screen and (max-width: 480px) {
+    .product-frame {
+        height: 280px;
+    }
+
+    .nav-bar button {
+        font-size: 16px;
+    }
+
+    .text-section {
+        font-size: 14px;
+    }
+
+    .add-to-cart,
+    .cart-quantity {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+
+    .cart-dropdown {
+        width: 250px;
+    }
+}
+
+/* Fix for cart dropdown positioning on mobile */
+@media screen and (max-width: 767px) {
+    .cart-dropdown {
+        right: -100px;
+        transform: none;
+    }
+}
+
+/* Ensure content doesn't get hidden under fixed elements */
+@media screen and (max-width: 1024px) {
+    .content {
+        padding-bottom: 100px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+}
+
+/* Hamburger Menu and Responsive Navigation Styles */
+/* Hamburger Menu Container */
+.hamburger-menu {
+    display: none; /* Hidden by default on desktop */
+    position: absolute;
+    top: 31px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Hamburger Icon Bars */
+.hamburger-icon {
+    width: 30px;
+    height: 20px;
+    position: relative;
+}
+
+.hamburger-icon span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #D1D1D1;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+}
+
+.hamburger-icon span:nth-child(1) {
+    top: 0px;
+}
+
+.hamburger-icon span:nth-child(2) {
+    top: 8px;
+}
+
+.hamburger-icon span:nth-child(3) {
+    top: 16px;
+}
+
+/* Open state for hamburger icon */
+.hamburger-icon.open span:nth-child(1) {
+    top: 8px;
+    transform: rotate(135deg);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.hamburger-icon.open span:nth-child(3) {
+    top: 8px;
+    transform: rotate(-135deg);
+}
+
+/* Mobile Navigation Menu */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: #222222;
+    z-index: 1000;
+    transition: right 0.3s ease-in-out;
+    padding-top: 80px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-nav.open {
+    right: 0;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav ul li {
+    padding: 15px 30px;
+    border-bottom: 1px solid #333;
+}
+
+.mobile-nav ul li a {
+    color: #D1D1D1;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+}
+
+/* Overlay for when menu is open */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
