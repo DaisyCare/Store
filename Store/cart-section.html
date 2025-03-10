@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Section</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Cart Icon Container */
+    .cart-icon {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      margin: 20px;
+    }
+
+    /* Shopping Cart Icon */
+    .cart-icon i {
+      font-size: 24px;
+    }
+
+    /* Badge for Item Count */
+    .cart-icon .badge {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 12px;
+    }
+
+    /* Dropdown/Modal for Cart Contents */
+    .cart-dropdown {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background-color: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      z-index: 1000;
+    }
+
+    .cart-dropdown ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .cart-dropdown li {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .cart-dropdown li:last-child {
+      border-bottom: none;
+    }
+
+    .cart-dropdown .total {
+      padding: 10px;
+      text-align: right;
+      font-weight: bold;
+    }
+
+    /* Show Dropdown on Hover */
+    .cart-icon:hover .cart-dropdown {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cart Section -->
+  <div class="cart-icon">
+    <!-- Shopping Cart Icon -->
+    <i>🛒</i>
+    <!-- Badge for Item Count -->
+    <span class="badge">0</span>
+
+    <!-- Dropdown/Modal for Cart Contents -->
+    <div class="cart-dropdown">
+      <ul id="cart-items">
+        <!-- Cart Items Will Be Dynamically Added Here -->
+      </ul>
+      <div class="total">
+        Total: $<span id="cart-total">0.00</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to Update Cart
+    const cart = {
+      items: [],
+      total: 0,
+      addItem: function (name, price) {
+        this.items.push({ name, price });
+        this.total += price;
+        this.updateUI();
+      },
+      updateUI: function () {
+        const cartItems = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+        const badge = document.querySelector('.cart-icon .badge');
+
+        // Clear Existing Items
+        cartItems.innerHTML = '';
+
+        // Add New Items
+        this.items.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+          cartItems.appendChild(li);
+        });
+
+        // Update Total
+        cartTotal.textContent = this.total.toFixed(2);
+
+        // Update Badge
+        badge.textContent = this.items.length;
+      }
+    };
+
+    // Example: Adding Items to Cart (You Can Replace This with Button Clicks)
+    cart.addItem('Missha Hair Therapy', 800);
+    cart.addItem('Rivance Rosemary Oil', 650);
+  </script>
+
+</body>
+</html>
